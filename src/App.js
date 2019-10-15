@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Search from "./components/Search";
+import ParkCards from "./components/ParkCards";
+import { findParks } from './services/api';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      parks: []
+    }
+  }
+
+  handleSearch = async (location) => {
+    const parks = await findParks(location);
+    console.log(parks);
+    this.setState({parks});
+  }
+  
+  render() {
+    return (
+      <div>
+        <h1>PARKS!</h1>
+        <Search handleSearch={this.handleSearch} size={large} />
+        {/* the first 'parks' below is what parks is called in ParkCards  */}
+        {/* (in the other component)  the second 'park' is what it is called 
+         in this file (hence the this)*/}
+        <ParkCards parks={this.state.parks}/>
+      </div>
+    )
+  }
 }
 
 export default App;
