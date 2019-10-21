@@ -22,7 +22,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>PARKS!</h1>
-        <Search handleSearch={this.handleSearch} size={large} />
+        <Search handleSearch={this.handleSearch} />
         {/* the first 'parks' below is what parks is called in ParkCards  */}
         {/* (in the other component)  the second 'park' is what it is called 
          in this file (hence the this)*/}

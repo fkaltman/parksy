@@ -2,8 +2,23 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+h1 {
+  color: salmon;
+}
+
+#park-card {
+  border-radius: 4px;
+  margin: 0 auto;
+  background-color: lightblue;
+  width: 80vw;
+  padding-bottom: 8vh;
+  margin-bottom: 6vh;
+}
+
+#park-pic {
+  width: 60vw;
+  margin: 0 auto;
+
 }
 
 .App-header {
@@ -17,6 +32,3 @@
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
-}
