@@ -31,8 +31,8 @@ class Search extends Component {
           value={this.state.location}
           placeholder="Enter location"
           onChange={this.handleChange}
-        /> 
-        <button>Submit</button>
+        /> <br />
+        <button className="submit-button">Submit</button>
       </form>
     )
   }

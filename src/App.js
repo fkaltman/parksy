@@ -24,7 +24,7 @@ class App extends React.Component {
       <div>
         <img className="noggin" src={Noggin}></img>
         <h1>parksy</h1>
-        <h2>Find playgrounds <br />nearby.</h2>
+        <h2>Find playgrounds nearby.</h2>
         <Search handleSearch={this.handleSearch} />
         {/* the first 'parks' below is what parks is called in ParkCards  */}
         {/* (in the other component)  the second 'park' is what it is called 

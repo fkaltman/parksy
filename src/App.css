@@ -3,27 +3,37 @@ html {
   background-color: rgb(217, 230, 235);
 }
 
-.App {
+body {
   text-align: center;
+}
+
+.noggin {
+  opacity: .5;
+  width: 30vw;
+  margin-top: 6vw;
 }
 
 h1 {
   font-family: 'Sacramento', cursive;
   text-align: center;
   color: rgb(197, 115, 119);
-  font-size: 4em;
+  font-size: 5em;
+  /* margin: 0 0 4vh 0; */
 }
 
 h2 {
   font-family: 'Poiret One', cursive;
   text-align: center;
   color: rgb(128, 168, 126);
+  font-size: 1em;
 }
 
-.noggin {
-  opacity: .5;
-  width: 30vw;
-  margin: 4vw 0 0 35vw;
+/* .submit-button {
+  margin-left: 6vw;
+} */
+
+form {
+  display: inline-block;
 }
 
 #park-card {
@@ -45,5 +55,13 @@ h2 {
   margin: 0 auto;
 
 }
+
+/* .searchform {
+  display:flex;
+}
+
+.location-input {
+  justify-content: center;
+} */
 
 
