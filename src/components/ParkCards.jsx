@@ -2,6 +2,7 @@ import React from 'react'
 
 // "parks" in line 5 is an example of destructuring
 // to allow you to use "parks" in lieu of "props.parks"
+
 export default function ParkCards({parks}) {
   
   return (
