@@ -1,17 +1,29 @@
+
+html {
+  background-color: rgb(217, 230, 235);
+}
+
 .App {
   text-align: center;
-  background: lightblue;
 }
 
 h1 {
+  font-family: 'Sacramento', cursive;
   text-align: center;
-  color: salmon;
+  color: rgb(197, 115, 119);
+  font-size: 4em;
+}
+
+h2 {
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+  color: rgb(128, 168, 126);
 }
 
 .noggin {
   opacity: .5;
   width: 30vw;
-  margin: 4vw 0 0 34vw;
+  margin: 4vw 0 0 35vw;
 }
 
 #park-card {
