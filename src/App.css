@@ -56,12 +56,9 @@ form {
 
 }
 
-/* .searchform {
-  display:flex;
+@media screen and (max-width: 800px) {
+  .noggin {
+    margin-top: 34vw;
+  }
+
 }
-
-.location-input {
-  justify-content: center;
-} */
-
-

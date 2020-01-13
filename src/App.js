@@ -1,9 +1,12 @@
 import React from 'react';
 import './App.css';
+import Home from "./components/Home"
 import Search from "./components/Search";
-import ParkCards from "./components/ParkCards";
+// import ParkCards from "./components/ParkCards";
+// import Noggin from './img/child-face.png'
+import { Link, } from "react-router-dom";
+import { BrowserRouter, Route, Switch, withRouter } from "react-router-dom"
 import { findParks } from './services/api';
-import Noggin from './img/child-face.png'
 
 class App extends React.Component {
   constructor(props) {
@@ -13,26 +16,44 @@ class App extends React.Component {
     }
   }
 
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleSubmit = (ev) => {
+    ev.preventDefault();
+    this.handleSearch(this.state.location);
+    // this.props.history.push('/parks-by-zip')
+  }
+
   handleSearch = async (location) => {
     const parks = await findParks(location);
     console.log(parks);
-    this.setState({parks});
+    this.setState({ parks });
   }
-  
+
   render() {
     return (
-      <div>
-        <img className="noggin" src={Noggin}></img>
-        <h1>parksy</h1>
-        <h2>Find playgrounds nearby.</h2>
-        <Search handleSearch={this.handleSearch} />
-        {/* the first 'parks' below is what parks is called in ParkCards  */}
-        {/* (in the other component)  the second 'park' is what it is called 
-         in this file (hence the this)*/}
-        <ParkCards parks={this.state.parks}/>
-      </div>
+      <>
+        <Link className="home" to="/"></Link>
+        <Link className="location" to="/enter-location"></Link>
+
+        <Route exact path="/" render={(props) =>
+          <Home {...props}
+            handleSearch={this.handleSearch}
+            parks={this.state.parks}
+          />} />
+        <Route path="/enter-location" render={(props) =>
+          <Search {...props}
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+            handleSearch={this.handleSearch}
+            val={this.state.location} />} />
+      </>
     )
   }
 }
 
-export default App;
+export default withRouter(App);
