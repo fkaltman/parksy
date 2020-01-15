@@ -28,32 +28,34 @@ h2 {
   font-size: 1em;
 }
 
-/* .submit-button {
-  margin-left: 6vw;
-} */
 
 form {
   display: inline-block;
 }
 
 #park-card {
+  background-color: rgb(208, 213, 216);
   border-radius: 4px;
   margin: 0 auto;
-  background-color: lightblue;
-  width: 80vw;
-  padding-bottom: 8vh;
-  margin-bottom: 6vh;
+  font-family: 'Comfortaa', cursive;
+  width: 100vw;
+  padding: 8vh 0 8vh 0;
+  margin-bottom: 1vh;
 }
 
 #park-name {
-  font-size: 24px;
-
+  font-size: 34px;
+  color: rgb(182, 117, 110);
+  font-family: 'Chelsea Market', cursive;
 }
 
 #park-pic {
-  width: 60vw;
+  width: 80vw;
   margin: 0 auto;
+}
 
+#address {
+  color:cadetblue;
 }
 
 @media screen and (max-width: 800px) {
