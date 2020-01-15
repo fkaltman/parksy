@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      parks: [],
-      location: ""
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     parks: []
+  //   }
+  // }
 
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} >
+      <form onSubmit={this.props.handleSubmit} >
         <input
           name="location"
           className="location-input"
-          value={this.state.location}
           placeholder="Enter location"
-          onChange={this.handleChange}
+          value={this.props.locationVal}
+          onChange={this.props.handleChange}
         />
         <button className="submit-button">Search</button>
       </form>

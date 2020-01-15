@@ -8,7 +8,9 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      // "src": "logo192.png",
+       // Changed below line to favicon src to remove error from erasing      
+      "src": "favicon.ico",
       "type": "image/png",
       "sizes": "192x192"
     },
