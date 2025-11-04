@@ -23,6 +23,7 @@ export default function ParkCards({ parks }) {
               }}
             />
           )}
+         {/* if park.location exists and has an address property */}
           {park.location?.display_address ? (
             <>
               <h3 id="address">{park.location.display_address[0]}</h3>
