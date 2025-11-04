@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const apiKey =
-  "Cevgw4CyvPl6GgL8jxkSMOWQ30JKK573VFf7QVheFnLyIHyn6hxrAPYSvkHhAAYeQLYOFH3gfkbwxKySuzU8jXx3BV9PgABgAp4WeHlT1aronHy7KfVhCuj-niQVXXYx";
+const apiKey = process.env.REACT_APP_YELP_API_KEY;
 
 const baseURL =
   "https://corsproxy.io/?https://api.yelp.com/v3/businesses/search";
