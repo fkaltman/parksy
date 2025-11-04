@@ -12,7 +12,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       parks: [],
-      location: ""
+      location: "",
+      loading: false,
+      error: null
     }
   }
 
@@ -22,16 +24,35 @@ class App extends React.Component {
     })
   }
 
-  handleSubmit = (ev) => {
+  handleSubmit = async (ev) => {
     ev.preventDefault();
-    this.handleSearch(this.state.location);
-    this.props.history.push('/parks')
+    if (!this.state.location.trim()) {
+      this.setState({ error: 'Please enter a location' });
+      return;
+    }
+    
+    await this.handleSearch(this.state.location);
+    this.props.history.push('/parks');
   }
 
   handleSearch = async (location) => {
-    const parks = await findParks(location);
-    console.log(parks);
-    this.setState({ parks });
+    this.setState({ loading: true, error: null });
+    
+    try {
+      const parks = await findParks(location);
+      console.log(parks);
+      this.setState({ 
+        parks, 
+        loading: false,
+        error: null 
+      });
+    } catch (error) {
+      console.error('Search error:', error);
+      this.setState({ 
+        error: 'Failed to search for parks. Please try again.',
+        loading: false 
+      });
+    }
   }
 
   render() {
@@ -50,6 +71,8 @@ class App extends React.Component {
               handleChange={this.handleChange}
               handleSearch={this.handleSearch}
               locationVal={this.state.location}
+              loading={this.state.loading}
+              error={this.state.error}
             />
           </Home>
         } />
