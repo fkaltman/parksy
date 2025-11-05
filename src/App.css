@@ -8,13 +8,13 @@ body {
 }
 
 .noggin {
-  opacity: .5;
+  opacity: 0.5;
   width: 30vw;
   margin-top: 6vw;
 }
 
 h1 {
-  font-family: 'Sacramento', cursive;
+  font-family: "Sacramento", cursive;
   text-align: center;
   color: rgb(197, 115, 119);
   font-size: 5em;
@@ -22,12 +22,11 @@ h1 {
 }
 
 h2 {
-  font-family: 'Poiret One', cursive;
+  font-family: "Poiret One", cursive;
   text-align: center;
   color: rgb(128, 168, 126);
   font-size: 1em;
 }
-
 
 form {
   display: inline-block;
@@ -37,7 +36,7 @@ form {
   background-color: rgb(208, 213, 216);
   border-radius: 4px;
   margin: 0 auto;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   width: 100vw;
   padding: 8vh 0 8vh 0;
   margin-bottom: 1vh;
@@ -46,7 +45,9 @@ form {
 #park-name {
   font-size: 34px;
   color: rgb(182, 117, 110);
-  font-family: 'Chelsea Market', cursive;
+  font-family: "Chelsea Market", cursive;
+  width: 80%;
+  margin: 4% auto;
 }
 
 #park-pic {
@@ -55,7 +56,7 @@ form {
 }
 
 #address {
-  color:cadetblue;
+  color: cadetblue;
 }
 
 @media screen and (max-width: 800px) {
@@ -63,4 +64,7 @@ form {
     margin-top: 34vw;
   }
 
+  #park-name {
+  font-size: 28px;
+  }
 }
